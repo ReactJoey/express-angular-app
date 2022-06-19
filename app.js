@@ -3,7 +3,6 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-// to make API calls from Frontend
 const cors = require('cors');
 // to connect to external endpoints safely
 const passport = require('passport');
@@ -12,11 +11,22 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+// Created for Users Routes
+const users = require('./routes/users');
+
 // Sets the port to localhost:3000
 const port = 3000;
 
+// allows external API requests to be made
+// lookup CORS Policy for more
+app.use(cors());
+
+// Middleware to parse JSONs
+app.use(bodyParser.json());
+
+// Root Index Route
 app.get('/', (req, res) => {
-    res.send('Error. Not found.');
+    res.send('Index. The root route.');
 });
 
 // Lets developper know in terminal that the server is running
