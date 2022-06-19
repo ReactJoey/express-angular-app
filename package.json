@@ -18,15 +18,15 @@
   },
   "homepage": "https://github.com/ReactJoey/express-angular-app#readme",
   "dependencies": {
+    "bcrypt": "*",
     "body-parser": "^1.20.0",
+    "cors": "*",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "install": "^0.13.0",
+    "jsonwebtoken": "*",
     "mongojs": "^3.1.0",
     "mongoose": "*",
-    "bcrypt": "*",
-    "cors": "*",
-    "jsonwebtoken": "*",
     "passport": "*",
     "passport-jwt": "*"
   }
