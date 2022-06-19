@@ -4,14 +4,14 @@ const config = require('./../config/database');
 
 // Schema for User
 const UserSchema = mongoose.Schema({
+    username: {
+        type: String,
+        required: true,
+    },
     name: {
         type: String,
     },
     email: {
-        type: String,
-        required: true,
-    },
-    username: {
         type: String,
         required: true,
     },
