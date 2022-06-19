@@ -8,7 +8,7 @@ const cors = require('cors');
 const passport = require('passport');
 // adding mongoose + connecting to database
 const mongoose = require('mongoose');
-const config = require('config/database');
+const config = require('./config/database');
 
 // connects to mongodb database
 mongoose.connect(config.database);
