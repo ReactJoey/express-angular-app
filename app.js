@@ -41,6 +41,8 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
+require('./config/passport')(passport);
+
 // Root (Index) Route
 app.get('/', (req, res) => {
     res.send('Index. The root route.');

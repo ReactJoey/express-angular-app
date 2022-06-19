@@ -43,3 +43,10 @@ module.exports.addUser = function(newUser, callback) {
         });
     });
 };
+
+module.exports.comparePassword = function(candidatePassword, hash, callback) {
+    bcrypt.compare(candidatePassword, hash, (e, isMatch) => {
+        if(e) throw e;
+        callback(null, isMatch);
+    });
+};
