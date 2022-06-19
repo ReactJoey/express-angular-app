@@ -8,7 +8,7 @@ A MongoDB, Express, Typescript, Angular, Node.JS, CSS3 app by ReactJoey - J. A. 
 #### Steps:
 1. Clone the repository.
 2. Run on your IDE and in the terminal (in your app's root directory) run 'npm i' or 'sudo npm i' on a Mac to install dev dependencies in the package.json
-3. Move over to the angular-client folder && check out the README.md - npm install into the angular-client folder the dev dependencies of angular-client's package.json.
+3. Move over to the angular-client folder && check out the README.md for more details - npm install into the angular-client folder the dev dependencies of angular-client's package.json.
 4. Go back to the Express-Angular-App folder (root directory of express-angular-app) and type 'npm start' in the terminal to run on localhost:3000 for development locally.
 5. Stay tuned for a new repository forked from here for the build environment with details on how to deploy - along with the live deployed link.
 6. Make sure to add secrets, keys and tokens as variables in your .env file in the root - and make sure to double-check that .env is in .gitignore before ever making a commit, push or merge request.
