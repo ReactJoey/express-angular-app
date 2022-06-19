@@ -1,1 +1,23 @@
-<p>home works!</p>
+<!--This is what the client will see (index.html) when they first access this app. - J. A.-->
+<div class="jumbotron text-center">
+    <h1>Authentication App by J. A.</h1>
+    <p class="lead">written in Angular, Typescript, CSS3, Express, MongoDB and Node.js.</p>
+    <div>
+        <a class="btn btn-primary" [routerLink]="['/login']">Login</a>
+        <a class="btn btn-primary" [routerLink]="['/register']">Register new user</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h3>Backend: Express Server + MongoDB Database</h3>
+        <p>With Node.js I wrote the backend for this app.</p>
+    </div>
+    <div class="col-md-4">
+        <h3>Frontend: Angular 14</h3>
+        <p>With Typescript I wrote the frontend for this app - to better exemplify my skills in the framework.</p>
+    </div>
+    <div class="col-md-4">
+        <h3>Authentication: JWT Tokens + Passport</h3>
+        <p>I used JSON Web Tokens and Passport for this app's authentication.</p>
+    </div>
+</div>
