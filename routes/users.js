@@ -1,5 +1,5 @@
-/* These are the Express.js routes for users */
-
+/* Here is the Express Router for routing urls.
+&& These are the Express.js routes for users */
 const express = require('express');
 const router = express.Router();
 
