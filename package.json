@@ -1,0 +1,19 @@
+{
+  "name": "express-angular-app",
+  "version": "1.0.0",
+  "description": "A MEAN Stack App written by J. A.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReactJoey/express-angular-app.git"
+  },
+  "author": "J. A.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReactJoey/express-angular-app/issues"
+  },
+  "homepage": "https://github.com/ReactJoey/express-angular-app#readme"
+}
