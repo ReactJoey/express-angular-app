@@ -23,8 +23,7 @@ const UserSchema = mongoose.Schema({
 
 const User = mongoose.model('User', UserSchema);
 
-// Callback functions
-
+// User related callback functions to export
 module.exports.getUserById = function(id, callback) {
     User.findById(id, callback);
 }
@@ -34,3 +33,13 @@ module.exports.getUserByUsername = function(username, callback) {
     User.findOne(query, callback);
 };
 
+// Use bcrypt to salt password 10x and hash it.
+module.exports.addUser = function(newUser, callback) {
+    bcrypt.genSalt(10, (e, salt) => {
+        bcrypt.hash(newUser.password, salt, (e, hash) => {
+            if(e) throw e;
+            newUser.password = hash;
+            newUser.save(callback);
+        });
+    });
+};
