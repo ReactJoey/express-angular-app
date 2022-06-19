@@ -61,8 +61,16 @@ router.post('/auth', (req, res, next) => {
 
 // Profile - adding passport to authenticate
 router.get('/profile', passport.authenticate('jwt', { session: false }), (req, res, next) => {
-    res.send('Profile page.');
+    res.json({ user: req.user });
 });
+
+// Auth notes by J. A.
+
+// Make sure that token returned in console is added to .env file appropriately as a variable to be used here - to keep the token private.
+
+// Make sure that .gitignore ignores .env as well as other files that it should ignore - such as node_modules and any secret .env variables such as tokens, secrets and keys.
+
+// Environment variables can also be added to Postman API and to MongoDB - make sure to also store permitted ip addresses in MongoDB settings for database.
 
 // Validation
 router.get('/validate', (req, res, next) => {
