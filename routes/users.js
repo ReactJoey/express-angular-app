@@ -2,11 +2,11 @@
 && These are the Express.js routes for users */
 const express = require('express');
 const router = express.Router();
-const User = require('../models/users');
+const User = require('./../config/database');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
-// Registration - constructing a new user
+// Registration - for constructing a new user
 router.post('/register', (req, res, next) => {
     let newUser = new User({
         name: req.body.name,

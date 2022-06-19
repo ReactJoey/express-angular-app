@@ -1,5 +1,4 @@
 /* Backend Express Server by J. A. */
-
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -15,12 +14,12 @@ mongoose.connect(config.database);
 
 // on connect - console logs confirmation
 mongoose.connection.on('connected', () => {
-    console.log('Connected to database '+config.database);
+    console.log('You are now connected to the database '+config.database);
 });
 
-// error handling
+// error handling message in console for development purposes
 mongoose.connection.on('error', (e) => {
-    console.log('Error connecting to database. '+e);
+    console.log('Error connecting to the database. '+e);
 });
 
 const app = express();
@@ -38,7 +37,7 @@ app.use(cors());
 // Middleware to parse JSONs
 app.use(bodyParser.json());
 
-// Root Index Route
+// Root (Index) Route
 app.get('/', (req, res) => {
     res.send('Index. The root route.');
 });
