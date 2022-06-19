@@ -2,9 +2,26 @@
 && These are the Express.js routes for users */
 const express = require('express');
 const router = express.Router();
+const User = require('../models/users');
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
 
-// Registration
-router.get('/register', (req, res, next) => {
+// Registration - constructing a new user
+router.post('/register', (req, res, next) => {
+    let newUser = new User({
+        name: req.body.name,
+        email: req.body.email,
+        username: req.body.username,
+        password: req.body.password
+    });
+    // if/else statement: success or error
+    User.addUser(newUser, (e, user) => {
+        if(e) {
+            res.json({ success: false, message: 'Registration failed. Please try again.' });
+        } else {
+            res.json({ success: true, message: 'You are now registered. :)' });
+        }
+    });
     res.send('Please register!');
 });
 
