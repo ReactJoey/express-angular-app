@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidateService } from '../../services/validate.service'; // import validation
+import { FlashMessageService } from 'angular2-flash-messages';
 
 // Angular boilerplate for a component (connects html and styles).
 @Component({
