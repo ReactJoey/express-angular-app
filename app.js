@@ -37,6 +37,10 @@ app.use(cors());
 // Middleware to parse JSONs
 app.use(bodyParser.json());
 
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Root (Index) Route
 app.get('/', (req, res) => {
     res.send('Index. The root route.');
