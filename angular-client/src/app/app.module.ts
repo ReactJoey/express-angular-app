@@ -11,6 +11,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { Routes } from '@angular/router';
 
+import { ValidateService } from './services/validate.service';
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'register', component: RegisterComponent},
@@ -33,7 +35,7 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ValidateService], // add validation
   bootstrap: [AppComponent]
 })
 export class AppModule { }
