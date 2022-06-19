@@ -15,6 +15,10 @@ const app = express();
 // Sets the port to localhost:3000
 const port = 3000;
 
+app.get('/', (req, res) => {
+    res.send('Error. Not found.');
+});
+
 // Lets developper know in terminal that the server is running
 app.listen(port, () => {
     console.log('listening on port '+port);
