@@ -6,8 +6,22 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 // to connect to external endpoints safely
 const passport = require('passport');
-// adding mongoose
+// adding mongoose + connecting to database
 const mongoose = require('mongoose');
+const config = require('config/database');
+
+// connects to mongodb database
+mongoose.connect(config.database);
+
+// on connect - console logs confirmation
+mongoose.connection.on('connected', () => {
+    console.log('Connected to database '+config.database);
+});
+
+// error handling
+mongoose.connection.on('error', (e) => {
+    console.log('Error connecting to database. '+e);
+});
 
 const app = express();
 
