@@ -10,15 +10,15 @@ var app = express();
 
 // Views
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views');
-app.engine('html', require('ejs').renderFile);
+app.set('views', path.join(__dirname, 'views')
+app.engine('html', require('ejs').renderFile)
 
 // Setting Client Static Folder
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'client')))
 
 // Middleware for parsing through JSONs
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
 // Generate URL extensions for client-side
 app.use('/', index);
