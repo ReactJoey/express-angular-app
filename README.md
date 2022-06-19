@@ -1,6 +1,6 @@
 # express-angular-app
 A MongoDB, Express, Typescript, Angular, Node.JS, CSS3 app by ReactJoey - J. A.
-####[Dev environment version]
+#### [Dev environment version]
 
 ## Full-Stack App - MEAN-stack
 ### Backend - Node.JS: Express Server + MongoDB Database.
