@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ValidateService } from '../../services/validate.service'; // import validation
-import { FlashMessageService } from 'angular2-flash-messages';
+import { AuthService } from '../../services/auth.service';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 // Angular boilerplate for a component (connects html and styles).
 @Component({
@@ -17,7 +19,12 @@ export class RegisterComponent implements OnInit {
     password: String;
 
     // inject ValidateService into constructor to include validation.
-    constructor(private validateService: ValidateService, private flashMessage: FlashMessageService) { };
+    constructor(
+        private router: Router,
+        private validateService: ValidateService, 
+        private authService: AuthService,
+        private flashMessage: FlashMessagesModule
+        ) { };
     
     ngOnInit() {
     };
@@ -46,5 +53,19 @@ export class RegisterComponent implements OnInit {
             });
             return false;
         };
+        // Register User success alert and route to /login
+        this.authService.registerUser(user).subscribe(data => {
+            if(data.success) {
+                this.flashMessage.show('You have registered successfully.', {
+                    cssClass: 'alert-success', timeout: 3000,
+                    this.router.navigate(['/login'])
+                } else {
+                    this.flashMessage.show('Error. Not found.', {
+                        cssClass: 'alert-danger', timeout: 3000
+                        this.router.navigate(['/register'])
+                    }
+                )});
+            };
+        });
     };
 };
