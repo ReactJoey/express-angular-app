@@ -7,8 +7,8 @@ export class AuthService {
     registerUser(user: { username: String; name: String; email: String; password: String; }) {
         throw new Error('Method not implemented.');
     }
-    authToken: any;
-    user: any;
+    authToken: String;
+    user: String;
 
     constructor() { private http: HttpClient | undefined };
 
@@ -20,9 +20,9 @@ export class AuthService {
     };
 };
 
-function registerUser(user: any) {
+function registerUser(user: String) {
     throw new Error('Function not implemented.');
 }
-function user(user: any) {
+function user(user: String) {
     throw new Error('Function not implemented.');
 }

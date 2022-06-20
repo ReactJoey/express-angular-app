@@ -22,10 +22,10 @@ export class ValidateService {
     };
 };
 
-function email(email: any) {
+function email(email: String) {
     throw new Error("Function not implemented.");
 }
-function validateEmail(email: (email: any) => void) {
+function validateEmail(email: (email: String) => void) {
     throw new Error("Function not implemented.");
 }
 
