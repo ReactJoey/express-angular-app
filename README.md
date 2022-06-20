@@ -1,4 +1,4 @@
-# express-angular-app (Educational)
+# (Educational) express-angular-app by J. A.
 A MongoDB, Express, Typescript, Angular, Node.JS, CSS3 app by 'ReactJoey' - J. A. - June 2022.
 #### [Dev environment version] - Feel free to see my commits, pushes and read my detailed comments.
 
