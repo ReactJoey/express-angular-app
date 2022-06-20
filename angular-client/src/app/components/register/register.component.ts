@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
 
         // Error message in console if required fields are missing.
         if(!this.validateService.validateRegister(user)) {
-            this.flashMessage.show('Please fill in all fields.', {
+            this.flashMessages.show('Please fill in all fields.', {
                 cssClass: 'alert-danger', timeout: 3000
             });
             return false;
@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
 
         // Error message if email is missing.
         if(!this.validateService.validateEmail(user.email)) {
-            this.flashMessage.show('Please enter a valid email address.', {
+            this.flashMessages.show('Please enter a valid email address.', {
                 cssClass: 'alert-danger', timeout: 3000
             });
             return false;
@@ -56,11 +56,11 @@ export class RegisterComponent implements OnInit {
         // Register User success alert and route to /login
         this.authService.registerUser(user).subscribe(data => {
             if(data.success) {
-                this.flashMessage.show('You have registered successfully.', {
+                this.flashMessages.show('You have registered successfully.', {
                     cssClass: 'alert-success', timeout: 3000,
                     this.router.navigate(['/login'])
                 } else {
-                    this.flashMessage.show('Error. Not found.', {
+                    this.flashMessages.show('Error. Not found.', {
                         cssClass: 'alert-danger', timeout: 3000
                         this.router.navigate(['/register'])
                     }

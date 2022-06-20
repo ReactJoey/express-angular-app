@@ -10,7 +10,7 @@ export class AuthService {
     authToken: String;
     user: String;
 
-    constructor() { private http: HttpClient | undefined };
+    constructor(private http: HttpClient) { };
 
     registerUser(user) {
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -18,11 +18,11 @@ export class AuthService {
         return this.http.post('http://localhost:3000/users/register', user, { headers: headers})
             .map(response => response.json());
     };
-};
 
-function registerUser(user: String) {
-    throw new Error('Function not implemented.');
-}
-function user(user: String) {
-    throw new Error('Function not implemented.');
-}
+    authenticateUser(user) {
+        let headers = new HttpHeaders();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('http://localhost:3000/users/auth', user, { headers: headers })
+            .map(response => response.json());
+    };
+};
