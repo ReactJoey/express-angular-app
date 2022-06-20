@@ -45,7 +45,12 @@ require('./config/passport')(passport);
 
 // Root (Index) Route
 app.get('/', (req, res) => {
-    res.send('Index. The root route.');
+    res.send('Root.');
+});
+
+// Redirects errant requests to root
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 // Lets developper know in terminal that the server is running
