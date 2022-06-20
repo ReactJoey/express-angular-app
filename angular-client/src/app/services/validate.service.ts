@@ -21,3 +21,11 @@ export class ValidateService {
         };
     };
 };
+
+function email(email: any) {
+    throw new Error("Function not implemented.");
+}
+function validateEmail(email: (email: any) => void) {
+    throw new Error("Function not implemented.");
+}
+
