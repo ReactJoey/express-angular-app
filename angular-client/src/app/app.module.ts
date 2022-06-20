@@ -13,15 +13,17 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpModule } from '@angular/http';
 
+// AuthGuard added to protect routes for Profile and Dashboard.
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'profile', component: ProfileComponent},
-  { path: 'dashboard', component: DashboardComponent}
+  { path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({
@@ -42,7 +44,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule
   ],
-  providers: [ValidateService, AuthService], // add validation + auth service
+  providers: [ValidateService, AuthService, AuthGuard], // add validation + auth service + AuthGuard to providers - by adding these items to the providers, we are able to access them here. :)
   bootstrap: [AppComponent]
 })
 export class AppModule { }
