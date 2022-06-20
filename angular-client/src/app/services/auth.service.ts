@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/map';
+import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable()
 export class AuthService {
@@ -45,6 +46,11 @@ export class AuthService {
         this.authToken = token;
         this.user = user;
     };
+
+    loggedIn() {
+        return tokenNotExpired();
+    };
+
     // Clears local storage cache of authToken upon logout.
     logout() {
         this.authToken = null;

@@ -14,11 +14,12 @@
             <ul class="nav navbar-nav navbar-left">
                 <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{ exact: true }"><a [routerLink]="['/']">Home</a></li>
             </ul>
+            <!-- These ngIf's are being used to hide links for dashboard and profile if user is not logged in. The opposite is then done to hide login and register when a user is logged in. :) J. A. -->
             <ul class="nav navbar-nav navbar-right">
-                <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{ exact: true }"><a [routerLink]="['/dashboard']">Dashboard</a></li>
-                <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{ exact: true }"><a [routerLink]="['/profile']">Profile</a></li>
-                <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{ exact: true }"><a [routerLink]="['/login']">Login</a></li>
-                <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{ exact: true }"><a [routerLink]="['/register']">Register</a></a></li>
+                <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{ exact: true }"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+                <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{ exact: true }"><a [routerLink]="['/profile']">Profile</a></li>
+                <lili *ngIf="!authService.loggedIn()" [routerLinkActiveOptions] = "{ exact: true }"><a [routerLink]="['/login']">Login</a></li>
+                <lili *ngIf="!authService.loggedIn()" [routerLinkActiveOptions] = "{ exact: true }"><a [routerLink]="['/register']">Register</a></a></li>
                 <li><a (click)="onLogoutClick()" href="#">Logout</a></a></li>
             </ul>
         </div>

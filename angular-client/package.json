@@ -24,7 +24,8 @@
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4",
     "angular2-flash-messages": "*",
-    "@angular/http": "*"
+    "@angular/http": "*",
+    "angular2-jwt": "*"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.2",
