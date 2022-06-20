@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
     password: String;
 
     // inject ValidateService into constructor to include validation.
-    constructor(private validateService: ValidateService) { };
+    constructor(private validateService: ValidateService, private flashMessage: FlashMessageService) { };
     
     ngOnInit() {
     };
@@ -33,13 +33,17 @@ export class RegisterComponent implements OnInit {
 
         // Error message in console if required fields are missing.
         if(!this.validateService.validateRegister(user)) {
-            console.log('Please fill in all fields.');
+            this.flashMessage.show('Please fill in all fields.', {
+                cssClass: 'alert-danger', timeout: 3000
+            });
             return false;
         };
 
         // Error message if email is missing.
         if(!this.validateService.validateEmail(user.email)) {
-            console.log('Please enter a valid email address.');
+            this.flashMessage.show('Please enter a valid email address.', {
+                cssClass: 'alert-danger', timeout: 3000
+            });
             return false;
         };
     };
