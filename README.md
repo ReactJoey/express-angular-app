@@ -1,8 +1,7 @@
 # Express-Angular-App (Educational Lesson/Guide) by J. A.
 A MongoDB, Express, Typescript, Angular, Node.JS, CSS3 app by 'ReactJoey' - J. A. - June 2022.
-![Alt text](https://avatars.githubusercontent.com/u/46306007?v=4 "ReactJoey hero banner with text containing: 'Full-Stack + Frontend Developer - J. A.'")
-
 #### [Dev environment version] - Feel free to see my commits, pushes and read my detailed comments.
+![Alt text](https://avatars.githubusercontent.com/u/46306007?v=4 "ReactJoey hero banner with text containing: 'Full-Stack + Frontend Developer - J. A.'")
 
 ## Full-Stack App - MEAN-stack
 ### Backend - Node.JS: Express Server + MongoDB Database.
